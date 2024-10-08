@@ -1,0 +1,271 @@
+main {
+    width: 100vw;
+    padding: 1.5rem 0 10vh;
+    background: linear-gradient(#2395db 20%, #79e4f0 100%);
+    --mask: radial-gradient(
+          142.77px at 50% calc(100% - 168px),
+          #000 99%,
+          #0000 101%
+        )
+        calc(50% - 56px) 0/112px 100%,
+      radial-gradient(142.77px at 50% calc(100% + 140px), #0000 99%, #000 101%)
+        50% calc(100% - 28px) / 112px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+  main .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 7vh;
+  }
+  main .list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+  main .list div {
+    padding: 0 0.4rem;
+    max-width: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+  }
+  main .list div .icon {
+    width: 1.5rem;
+    stroke: #cadddd;
+    fill: none;
+  }
+  main .list div p {
+    font-weight: 0.9rem;
+  }
+  main .list div:hover .icon {
+    stroke: #fff;
+  }
+  main .request {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+  }
+  main .request .img {
+    width: 9.2vw;
+  }
+  main .request .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  main .request .content .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  main .request .content .cards div {
+    padding: 1.2rem 2.2rem 1.2rem 0.8rem;
+    position: relative;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+    font-size: 1rem;
+    background: #ffffff30;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.25rem;
+    cursor: pointer;
+  }
+  main .request .content .cards div::after {
+    content: "";
+    width: 1.25rem;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+    transform: translate(0, -50%);
+    transition: 0.3s;
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+  }
+  main .request .content .cards div:hover {
+    background: #ffffff40;
+  }
+  main .request .content .cards div:hover::after {
+    transform: translate(20%, -50%);
+  }
+  main .request .content .cards div .icon {
+    min-width: 1.75rem;
+    max-width: 1.75rem;
+    stroke-width: 1.5px;
+    fill: none;
+    stroke: #fff;
+  }
+  main .request .content .input {
+    position: relative;
+  }
+  main .request .content .input input {
+    width: 100%;
+    padding: 0.75rem 3rem 0.75rem 0.75rem;
+    position: relative;
+    font-size: 1.2rem;
+    color: #061c31;
+    background: #fff;
+    outline: 0;
+    border: none;
+    border-radius: 0.5rem;
+    pointer-events: visible;
+  }
+  main .request .content .input input::placeholder {
+    color: #d3d3d3;
+  }
+  main .request .content .input .icon {
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    display: block;
+    cursor: not-allowed;
+  }
+  main .request .content .tips {
+    display: flex;
+    gap: 0.5rem;
+  }
+  main .request .content .tips div {
+    padding: 0.5rem 0.75rem;
+    color: #fff;
+    font-size: 0.8rem;
+    background: linear-gradient(270deg, #61b8f3 0, #40a9ea 100%);
+    border-radius: 0 5rem 5rem;
+    cursor: pointer;
+  }
+  main .request .content .tips div:hover {
+    background: linear-gradient(270deg, #75c2f5 0, #53b0e9 100%);
+  }
+  section.content {
+    padding-bottom: 5rem;
+  }
+  section.content h2 {
+    margin-bottom: 1.5rem;
+    color: #061c31;
+    font-size: 2rem;
+  }
+  section.content .grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 5vw;
+  }
+  section.content .grid .news {
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1.5px solid #061c31;
+  }
+  section.content .grid .news__item {
+    width: 100%;
+    height: 5.5rem;
+    padding: 0.7rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 5fr;
+    gap: 0.5rem;
+    align-items: center;
+    color: #061c31;
+    border-bottom: 1.5px solid #061c31;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 900px) {
+    main .list,
+    main .request .content .cards div::after {
+      display: none;
+    }
+    main .request .content .cards div {
+      padding: 1.2rem 0.8rem !important;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.25rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    main .request .content .tips {
+      flex-wrap: wrap;
+    }
+    main .request {
+      flex-direction: column;
+    }
+    main .request .img {
+      width: 20vw;
+    }
+    section.content .grid {
+      grid-template-columns: 1fr;
+    }
+    section.content .grid .news__item {
+      padding: 0.7rem 1rem;
+      height: auto;
+    }
+  }
+  section.content .grid .news__item > p {
+    align-self: flex-start;
+    font-size: 1.1rem;
+  }
+  section.content .grid .news__item .icon {
+    width: 1.5rem;
+    stroke: #061c31;
+  }
+  section.content .grid .news__item .icon.yellow {
+    stroke: #ffbf00;
+  }
+  section.content .grid .news__item .info {
+    font-weight: 400;
+  }
+  section.content .grid .news__item .info p {
+    font-size: 1rem;
+  }
+  section.content .grid .news__item .info time {
+    color: grey;
+    font-size: 0.8rem;
+  }
+  section.content .grid .news__item:last-child {
+    border-bottom: none;
+  }
+  section.content .grid .news__item:hover > p {
+    text-decoration: underline;
+  }
+  section.content .grid .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  section.content .grid .buttons picture {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    border: 2px solid #88deec;
+    cursor: pointer;
+  }
+  section.content .grid .buttons picture:first-child {
+    height: min-content;
+    aspect-ratio: unset;
+    grid-column: 1/3;
+  }
+  section.content .grid .buttons picture:first-child img {
+    width: 100%;
+  }
+  section.content .grid .buttons picture img {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+  }
+  A {
+    color: #fff
+  }  
